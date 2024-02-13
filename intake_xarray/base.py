@@ -18,7 +18,7 @@ class DataSourceMixin(DataSource):
             self._open_dataset()
 
             metadata = {
-                'dims': dict(self._ds.dims),
+                'dims': dict(self._ds.sizes),
                 'data_vars': {k: list(self._ds[k].coords)
                               for k in self._ds.data_vars.keys()},
                 'coords': tuple(self._ds.coords.keys()),
